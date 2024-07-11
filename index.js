@@ -44,7 +44,7 @@ const app = express();
 
 // Define a simple GET endpoint
 app.get('/', (req, res) => {
-  res.send('Hello, world!');
+  res.send('Hello, worldd!');
 });
 
 // Start the server and listen on port 5000
