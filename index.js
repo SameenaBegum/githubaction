@@ -1,37 +1,53 @@
-const express = require('express')
-const app = express()
+// const express = require('express')
+// const app = express()
 
-//app.get('/', function (req, res) {
+// //app.get('/', function (req, res) {
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
-// Define the input and output file paths using process.cwd()
-const input_file_path = path.join(process.cwd(), 'input.txt');
-const output_file_path = path.join(process.cwd(), 'output.txt');
+// // Define the input and output file paths using process.cwd()
+// const input_file_path = path.join(process.cwd(), 'input.txt');
+// const output_file_path = path.join(process.cwd(), 'output.txt');
 
-// Read the input file
-fs.readFile(input_file_path, 'utf8', (err, data) => {
-  if (err) {
-    console.error(`Error reading file: ${err.message}`);
-    return;
-  }
+// // Read the input file
+// fs.readFile(input_file_path, 'utf8', (err, data) => {
+//   if (err) {
+//     console.error(`Error reading file: ${err.message}`);
+//     return;
+//   }
 
-  // Modify the content (e.g., convert to uppercase)
-  const modified_data = data.toUpperCase();
+//   // Modify the content (e.g., convert to uppercase)
+//   const modified_data = data.toUpperCase();
 
-  // Write the modified content to the output file
-  fs.writeFile(output_file_path, modified_data, 'utf8', (err) => {
-    if (err) {
-      console.error(`Error writing file: ${err.message}`);
-      return;
-    }
-    console.log(`File has been modified and saved to ${output_file_path}`);
-  });
+//   // Write the modified content to the output file
+//   fs.writeFile(output_file_path, modified_data, 'utf8', (err) => {
+//     if (err) {
+//       console.error(`Error writing file: ${err.message}`);
+//       return;
+//     }
+//     console.log(`File has been modified and saved to ${output_file_path}`);
+//   });
+// });
+
+
+// //})
+
+// app.listen(3000)
+// console.log('App listen in 3000')
+
+// Import the Express module
+const express = require('express');
+
+// Create an Express application
+const app = express();
+
+// Define a simple GET endpoint
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
 });
 
-
-//})
-
-app.listen(3000)
-console.log('App listen in 3000')
+// Start the server and listen on port 5000
+app.listen(5000, () => {
+  console.log('Server is running on http://localhost:5000');
+});
